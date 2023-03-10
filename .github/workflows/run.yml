@@ -16,20 +16,10 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-        #name: run
-        #on:
-        #  push:
-        #    branches:
-        #      - main
-        #      - master
-        #jobs:
-        #  deploy:
-        #    runs-on: ubuntu-latest
-        #    steps:
-        #      - uses: actions/checkout@v2
-        #      - uses: actions/setup-python@v2
-        #        with:
-        #          python-version: 3.x
-        #      - run: |
-        #          pip install -r requirements.txt
-        #      - run: ./test.sh
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+           python-version: 3.x
+      - run: |
+          pip install -r requirements.txt
+      - run: ./test.sh
