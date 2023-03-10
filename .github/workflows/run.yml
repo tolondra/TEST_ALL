@@ -22,4 +22,4 @@ jobs:
            python-version: 3.x
       - run: |
           pip install -r requirements.txt
-      - run: ./test.sh
+      - run: sh ./test.sh
