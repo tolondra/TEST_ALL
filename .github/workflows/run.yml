@@ -24,18 +24,25 @@ jobs:
           pip install -r requirements.txt
       - run: |
          pip list | awk '(NR>2){print "pip show " $1}'|sh > details.dat #| grep -E 'Name|Version|License'> caca.dat
-      - run: cat details.dat
-         #- run: |
-         #   grep Name details.dat | awk '{print $2}' > name.dat
-         #- run: |
-         #   grep Version details.dat | awk '{print $2}' > version.dat
-         #- run: |
-         #   grep License detail.dat | awk '{print $2}' > license.dat 
-         #- run: |
-         #   wc license.dat | awk '{print "Number of Packages: " $1}' > Table_licences.dat
-         #- run: |
-         #   paste name.dat version.dat license.dat >> Table_licences.dat
-         #- run: |
-         #   mv Table_licenses.dat /home/runner/work/TEST_ALL/TEST_ALL
-
-
+      - run: pwd #cat details.dat
+        #      - uses: actions/upload-artifact@v2
+        #        with:
+        #          name:my-artifact
+        #          path: 
+        #      - uses: actions/download-artifact@v2
+        #        with:
+        #          name: details
+        #         #- run: |
+        #         #   grep Name details.dat | awk '{print $2}' > name.dat
+        #         #- run: |
+        #         #   grep Version details.dat | awk '{print $2}' > version.dat
+        #         #- run: |
+        #         #   grep License detail.dat | awk '{print $2}' > license.dat 
+        #         #- run: |
+        #         #   wc license.dat | awk '{print "Number of Packages: " $1}' > Table_licences.dat
+        #         #- run: |
+        #         #   paste name.dat version.dat license.dat >> Table_licences.dat
+        #         #- run: |
+        #         #   mv Table_licenses.dat /home/runner/work/TEST_ALL/TEST_ALL
+        #
+        #
