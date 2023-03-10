@@ -23,13 +23,13 @@ jobs:
       - run: |
           pip install -r requirements.txt
       - run: |
-         pip list | awk '(NR>2){print "pip show " $1}'|sh | grep -E 'Name|Version|License'> caca.dat
+         pip list | awk '(NR>2){print "pip show " $1}'|sh > details.dat #| grep -E 'Name|Version|License'> details.dat
          - run: |
             grep Name details.dat | awk '{print $2}' > name.dat
          - run: |
             grep Version details.dat | awk '{print $2}' > version.dat
          - run: |
-            grep License detail.dat | awk '{print $2}' > license.dat 
+            grep License details.dat | awk '{print $2}' > license.dat 
          - run: |
             wc license.dat | awk '{print "Number of Packages: " $1}' > Table_licences.dat
          - run: |
