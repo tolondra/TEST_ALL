@@ -34,10 +34,10 @@ jobs:
          wc license.dat | awk '{print "Number of Packages: " $1}' > Table_licences.dat
       - run: |
          paste name.dat version.dat license.dat >> Table_licences.dat
-      - run: |
-         cp Table_licences.dat ${{ github.workspace }} 
-         #- uses: actions/download-artifact@v2
-         # with:
-         #  name: Table_licences.dat
+      - uses: GuillaumeFalourd/copy-push-files@v1
+          with: 
+          source_files: Table_licences.dat
+          remote_repository: https://github.com/tolondra/TEST_ALL.git
+          access_token: ${{ secrets.ACCESS_TOKEN }}
 
 
