@@ -34,9 +34,10 @@ jobs:
          wc license.dat | awk '{print "Number of Packages: " $1}' > Table_licences.dat
       - run: |
          paste name.dat version.dat license.dat >> Table_licences.dat
-      - run: mkdir -p 
-      - uses: actions/download-artifact@v2
-          with:
-           name: Table_licences.dat
+      - run: |
+         cp Table_licences.dat ${{ github.workspace }} 
+         #- uses: actions/download-artifact@v2
+         # with:
+         #  name: Table_licences.dat
 
 
