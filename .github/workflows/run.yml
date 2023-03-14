@@ -33,6 +33,12 @@ jobs:
       - run: |
          wc license.dat | awk '{print "Number of Packages: " $1}' > Table_licences.dat
       - run: |
+         echo "--------------------------------------------------"  >> Table_licences.dat
+      - run: |
+         echo "NAME   VERSION  LICENSE"
+      - run: |
+         echo "--------------------------------------------------"  >> Table_licences.dat
+      - run: |
          paste name.dat version.dat license.dat >> Table_licences.dat
       - run: |
          mkdir -p licences
