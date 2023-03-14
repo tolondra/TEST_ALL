@@ -39,7 +39,7 @@ jobs:
          yes| cp -rf Table_licences.dat ./output/
       - name: Commit files # commit the output folder
       - run: | 
-        git config --local user.email "tolondra@gamil.com"
+        git config --local user.email "tolondra@gmail.com"
         git config --local user.name "tolondra"
         git add ./output
         git commit -m "Updare Licenses"
