@@ -1,0 +1,8 @@
+Number of Packages: 7
+numpy	1.24.2	BSD-3-Clause
+pandas	1.5.3	BSD-3-Clause
+pip	22.3.1	MIT
+python-dateutil	2.8.2	Dual
+pytz	2022.7.1	MIT
+setuptools	65.5.0	
+six	1.16.0	MIT
