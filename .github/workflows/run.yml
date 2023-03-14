@@ -35,17 +35,17 @@ jobs:
       - run: |
          paste name.dat version.dat license.dat >> Table_licences.dat
       - run: |
-         mkdir -p output
-         yes| cp -rf Table_licences.dat ./output/
+         mkdir -p licences
+         yes| cp -rf Table_licences.dat ./licences/
       - name: Commit files # commit the output folder
         run: | 
-        git config --local user.email "test@github.com"
-        git config --local user.name "GitHub Action test"
-        git add ./output
-        git commit -m "Updare Licenses"
+           git config --local user.email "test@github.com"
+           git config --local user.name "GitHub Action test"
+           git add ./licences
+           git commit -m "Updare Licenses"
       - name: Push Licenses File
         uses: ad-m/github-push-action@master
         with:
-        branch: main
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        force: true
+          branch: main
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
