@@ -35,7 +35,7 @@ jobs:
       - run: |
          echo "--------------------------------------------------"  >> Table_licences.dat
       - run: |
-         echo "NAME   VERSION  LICENSE"
+         echo "NAME   VERSION  LICENSE"  >> Table_licences.dat
       - run: |
          echo "--------------------------------------------------"  >> Table_licences.dat
       - run: |
