@@ -38,7 +38,7 @@ jobs:
          mkdir -p output
          yes| cp -rf Table_licences.dat ./output/
       - name: Commit files # commit the output folder
-      - run: | 
+        run: | 
         git config --local user.email "test@github.com"
         git config --local user.name "GitHub Action test"
         git add ./output
