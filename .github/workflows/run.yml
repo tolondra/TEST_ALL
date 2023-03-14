@@ -49,3 +49,4 @@ jobs:
           branch: main
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force: true
+      - run: ls
