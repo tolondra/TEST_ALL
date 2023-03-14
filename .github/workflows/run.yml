@@ -34,12 +34,18 @@ jobs:
          wc license.dat | awk '{print "Number of Packages: " $1}' > Table_licences.dat
       - run: |
          paste name.dat version.dat license.dat >> Table_licences.dat
-      - run: pwd
-      - run: ls
-         #- uses: GuillaumeFalourd/copy-push-files@v1
-         #    with: 
-         #    source_files: Table_licences.dat
-         #    remote_repository: https://github.com/tolondra/TEST_ALL.git
-         #    access_token: ${{ secrets.ACCESS_TOKEN }}
-
-
+      - run: |
+         mkdir -p output
+         yes| cp -rf Table_licences.dat ./output/
+      - name: Commit files # commit the output folder
+      - run: | 
+        git config --local user.email "tolondra@gamil.com"
+        git config --local user.name "tolondra"
+        git add ./output
+        git commit -m "Updare Licenses"
+      - name: Push Licenses File
+        uses: ad-m/github-push-action@master
+        with:
+        branch: main
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        force: true
